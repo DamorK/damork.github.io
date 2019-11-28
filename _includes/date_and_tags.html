@@ -1,0 +1,5 @@
+<small>{{ include.post.date | date: "%Y-%m-%d" }}</small>
+
+{% if include.post.tags %}
+<small>[#{{ include.post.tags | join: " #" }}]</small>
+{% endif %}

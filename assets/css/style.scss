@@ -1,0 +1,19 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+header {
+  width: 170px;
+}
+
+section {
+  width: 650px;
+}
+
+nav p {
+  border-style: dotted;
+  border-color: #dededd;
+  border-width: 0 0 2px;
+  padding: 0 0 3px;
+}
