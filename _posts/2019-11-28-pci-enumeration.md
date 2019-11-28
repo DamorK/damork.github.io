@@ -12,7 +12,7 @@ Urządzenia PCIe można podzielić na dwie kategorie: urządzenia końcowe (_ang
 
 ![Drzewo urządzeń PCIe](/assets/img/pcitree.png)
 
-Za wykrycie wszystkich mostków i ponumerowanie zarządzanych przez nie szyn odpowiada firmware komputera (np. BIOS) w pierwszych momentach jego działania. Analogicznie, urządzeniom w obrębie jednej szyny zostają sprzętowo nadane unikalne numery. Ponadto, jedno urządzenie fizyczne może udostępniać wiele urządzeń logicznych, tzw. funkcji (_ang. function), które mogą być niezależnie konfigurowane w systemie. 
+Za wykrycie wszystkich mostków i ponumerowanie zarządzanych przez nie szyn odpowiada firmware komputera (np. BIOS) w pierwszych momentach jego działania. Analogicznie, urządzeniom w obrębie jednej szyny zostają sprzętowo nadane unikalne numery. Ponadto, jedno urządzenie fizyczne może udostępniać wiele urządzeń logicznych, tzw. funkcji (_ang. function_), które mogą być niezależnie konfigurowane w systemie. 
 
 Podsumowując, aby jednoznacznie zidentyfikować urządzenie logiczne, np. w celu odczytania z niego danych, należy posłużyć się adresem złożonym z następujących elementów:
 * 8-bitowy numer szyny (_ang. bus number_)
