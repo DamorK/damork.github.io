@@ -1,7 +1,7 @@
 ---
 title: Wyliczanie urządzeń PCI-Express
 layout: post
-tags: [pci, hardware, x86]
+tags: [pci, hardware, x86, linux]
 ---
 
 Cześć :). Dziś postaram się opisać, w jaki sposób system operacyjny może wykryć i skonfigurować urządzenia podpięte do magistrali PCIe. Wyjaśnię mechanizm dostępu do przestrzeni konfiguracyjnej urządzeń PCIe, korzystając z linuksowego urządzenia `/dev/mem`, reprezentującego fizyczną przestrzeń adresową systemu.
