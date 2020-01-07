@@ -1,7 +1,7 @@
 ---
 title: Wyliczanie urządzeń PCI-Express
 layout: post
-tags: [pcie, hardware, x86, linux]
+tags: [pcie, hardware, x64, linux]
 ---
 
 Cześć :). Dziś postaram się opisać, w jaki sposób system operacyjny może wykryć i skonfigurować urządzenia podpięte do magistrali PCIe. Wyjaśnię mechanizm dostępu do przestrzeni konfiguracyjnej urządzeń PCIe, korzystając z linuksowego urządzenia `/dev/mem`, reprezentującego fizyczną przestrzeń adresową systemu.
@@ -12,7 +12,7 @@ Urządzenia PCIe można podzielić na dwie kategorie: urządzenia końcowe (_ang
 
 ![Drzewo urządzeń PCIe](/assets/img/pcitree.png)
 
-Zaraz po uruchomieniu komputera, jeszcze przed przekazaniem sterowania do systemu operacyjnego, firmware (BIOS) zajmuje się wykryciem wszystkim mostków i ponumerowaniem zarządzanych przez nie szyn. Urządzenia w obrębie jednej szyny również mają sprzętowo nadane unikalne numery. Ponadto, jedno urządzenie fizyczne może realizować wiele urządzeń logicznych, tzw. funkcji (_ang. function_), które mogą być traktowane przez system jako niezależne byty.
+Numery szyn są nadawane przez firmware (BIOS) komputera w procesie konfiguracji mostków, jeszcze przed przekazaniem sterowania do systemu operacyjnego. Numery urządzeń w obrębie jednej szyny wynikają bezpośrednio z fizycznej lokalizacji urządzenia, tzn. w którym gnieździe jest ono zamontowane. Ponadto, jedno urządzenie fizyczne może realizować wiele urządzeń logicznych, tzw. funkcji (_ang. function_), które mogą być traktowane przez system jako niezależne byty.
 
 Jednoznaczna identyfikacja urządzenia wymaga więc adresu złożonego z trzech komponentów:
 * 8-bitowy numer szyny (_ang. bus number_): <0-255>
@@ -44,9 +44,9 @@ dc000000
 
 ## Eksperyment
 
-Spróbujmy teraz sprawdzić tę wiedzę w praktyce i stworzyć prosty skrypt basha, który znajdzie wszystkie urządzenia PCIe, używając do tego tylko danych z surowego obrazu pamięci reprezentowanego przez `/dev/mem`.
+Spróbujmy teraz sprawdzić tę wiedzę w praktyce i stworzyć prosty skrypt basha, który znajdzie wszystkie urządzenia PCIe, używając do tego tylko surowego obrazu pamięci (`/dev/mem`).
 
-> Nowsze wersje Linuksa są domyślnie kompilowane z opcją kernela `CONFIG_STRICT_DEVMEM=y`, która znacznie ogranicza dostęp do urządzenia `/dev/mem`, dlatego ten eksperyment wymaga przekompilowania jądra lub użycia starszej dystrybucji. Ja użyłem Ubuntu 8.04 na wirtualnej maszynie z 4GB pamięci RAM. 
+> Nowsze wersje Linuksa są domyślnie kompilowane z opcją kernela `CONFIG_STRICT_DEVMEM=y`, która znacznie ogranicza dostęp do urządzenia `/dev/mem`, dlatego ten eksperyment wymaga przekompilowania jądra z wyłączoną ww. opcją lub użycia starszej dystrybucji. Ja użyłem Ubuntu 8.04 na wirtualnej maszynie z 4GB pamięci RAM. 
 
 ```bash
 #!/bin/bash
