@@ -1,0 +1,15 @@
+comments:
+  allowedFields: ["name", "url", "comment"]
+  branch: "master"
+  commitMessage: "Add a comment"
+  filename: "comment-{@timestamp}"
+  format: "yaml"
+  generatedFields:
+    date:
+      type: date
+      options:
+        format: "timestamp-seconds"
+  moderation: true
+  name: "notatkizpiwnicy.eu"
+  path: "_data/comments/{options.slug}"
+  requiredFields: ["name", "comment"]
