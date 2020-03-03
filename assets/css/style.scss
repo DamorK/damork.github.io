@@ -19,3 +19,44 @@ nav p {
     width: 650px;
   }
 }
+
+hr { 
+  margin: 30px 0;
+  height: 1px;
+  background: #abdaf5
+}
+
+.comment { 
+  padding: 10px; 
+  margin: 10px 0;
+  border: #abdaf5 solid 1px;
+  border-radius: 4px;
+  background: #f6f6f6;
+}
+.comment p { 
+  margin: 0;
+}
+
+.newcomment {
+  display: inline-flex;
+  flex-flow: row wrap;
+}
+.newcomment label {
+  flex: 1;
+  line-height: 35px;
+}
+.newcomment input {
+  flex: 2;
+  margin: 5px 0;
+  border: 1px solid #abdaf5;
+  font-family: inherit;
+  color: inherit;
+}
+.newcomment textarea {
+  flex-basis: 100%;
+  margin: 10px 0;
+  height: 100px;
+  border: 1px solid #abdaf5;
+  font-family: inherit;
+  color: inherit;
+}
