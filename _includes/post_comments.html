@@ -1,0 +1,28 @@
+<hr/>
+
+{% for comment_item in include.site.data.comments[include.post.slug] %}
+  <div class="comment">
+    {% assign comment = comment_item[1] %}
+    <small>{{comment.date | date: "%Y-%m-%d %H:%M" }}</small><br/>
+    <strong>
+      {% if comment.url %}<a href="{{comment.url}}">{{comment.name}}</a>
+      {% else %}{{comment.name}}
+      {% endif %} napisał:
+    </strong>
+    <p>{{comment.comment}}</p>
+  </div>
+{% endfor %}
+
+<form method="POST" action="https://dev.staticman.net/v3/entry/github/DamorK/damork.github.io/master">
+<div class="newcomment">
+  <label for="name_input">Pseudonim:</label>
+  <input id="name_input" name="fields[name]" type="text" />
+  <span style="flex-basis: 100%"></span>
+  <label for="url_input">URL (opcjonalnie):</label>
+  <input id="url_input" name="fields[url]" type="text" />
+  <textarea name="fields[comment]"></textarea>
+  <input name="options[redirect]" type="hidden" value="{{ include.post.url | absolute_url }}">
+  <input name="options[slug]" type="hidden" value="{{ include.post.slug }}">
+  <button type="submit">Dodaj komentarz</button>
+</div>
+</form>
