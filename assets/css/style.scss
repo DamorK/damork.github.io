@@ -3,6 +3,7 @@
 
 @import "{{ site.theme }}";
 
+// Main layout
 nav p {
   border-style: dotted;
   border-color: #dededd;
@@ -14,18 +15,22 @@ nav p {
   header {
     width: 170px;
   }
-
   section {
     width: 650px;
   }
 }
 
+// Specific elements
 hr { 
   margin: 30px 0;
   height: 1px;
   background: #abdaf5
 }
+.highlight {
+  font-size: 12px
+}
 
+// Comment formatting
 .comment { 
   padding: 10px; 
   margin: 10px 0;

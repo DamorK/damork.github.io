@@ -4,7 +4,7 @@ layout: post
 tags: [pcie, hardware, x64, linux]
 ---
 
-Cześć :). Dziś postaram się opisać, w jaki sposób system operacyjny może wykryć i skonfigurować urządzenia podpięte do magistrali PCIe. Wyjaśnię mechanizm dostępu do przestrzeni konfiguracyjnej urządzeń PCIe, korzystając z linuksowego urządzenia `/dev/mem`, reprezentującego fizyczną przestrzeń adresową systemu.
+Cześć! Dziś postaram się opisać, w jaki sposób system operacyjny może wykryć i skonfigurować urządzenia podpięte do magistrali PCIe. Wyjaśnię mechanizm dostępu do przestrzeni konfiguracyjnej urządzeń PCIe, korzystając z linuksowego urządzenia `/dev/mem`, reprezentującego fizyczną przestrzeń adresową systemu.
 
 ## Topologia magistrali PCIe
 

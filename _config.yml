@@ -2,3 +2,4 @@ theme: jekyll-theme-minimal
 lang: pl
 title: Notatki z piwnicy
 description: Pejzaże okołokomputerowego świata, czyli kolejny blog programisty.
+examples_url: "https://github.com/DamorK/damork.github.io/tree/master/_examples/"

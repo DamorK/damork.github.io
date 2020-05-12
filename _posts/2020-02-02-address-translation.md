@@ -16,7 +16,7 @@ Zacznijmy od bardzo prostego kodu, który modyfikuje bajt dynamicznie zaalokowan
 
 int main() 
 {
-  uint8_t* addr = new uint8_t;
+  volatile uint8_t* addr = new uint8_t;
   *addr = 1;
   printf("Address: %llx\n", (uint64_t) addr);
   return 0; 
@@ -70,7 +70,7 @@ uint64_t virtToPhys(uint64_t virtualAddr)
 
 int main() 
 {
-  uint8_t* addr = new uint8_t;
+  volatile uint8_t* addr = new uint8_t;
   *addr = 1;
   const auto physAddr = virtToPhys((uint64_t) addr);
   printf("Address: %llx\n", (uint64_t) addr);
