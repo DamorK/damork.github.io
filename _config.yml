@@ -3,3 +3,6 @@ lang: pl
 title: Notatki z piwnicy
 description: Pejzaże okołokomputerowego świata, czyli kolejny blog programisty.
 examples_url: "https://github.com/DamorK/damork.github.io/tree/master/_examples/"
+kramdown:
+   syntax_highlighter_opts:
+      disable : true

@@ -26,8 +26,11 @@ hr {
   height: 1px;
   background: #abdaf5
 }
-.highlight {
-  font-size: 12px
+pre {
+  padding: 8px 12px;
+}
+pre code {
+  font-size: 12px;
 }
 
 // Comment formatting
